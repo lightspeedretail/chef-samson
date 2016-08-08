@@ -1,0 +1,25 @@
+common: &common
+  adapter: <%= @adapter || "mysql2" %>
+  <% unless @adapter == 'sqlite3' %>
+  port: <%= @port || case @adapter || "mysql2"
+                     when "mysql2" then "3306"
+                     when "postgresql" then "5432"
+                     end %>
+  username: <%= @username || 'root' %>
+  password: <%= @password %>
+  host: <%= @host || '127.0.0.1' %>
+  <% end %>
+  pool: <%= @pool || 5 %>
+  timeout: <%= @timeout || 5000 %>
+
+production:
+  <<: *common
+  database: <%= @path || 'samson' %>
+
+development:
+  <<: *common
+  database: <%= @path_dev || 'samson_dev' %>
+
+test:
+  <<: *common
+  database: <%= @path_test || 'samson_test' %>

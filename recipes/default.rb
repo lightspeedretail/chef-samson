@@ -1,0 +1,6 @@
+include_recipe "#{cookbook_name}::_install_dependencies"
+include_recipe "#{cookbook_name}::_install_user"
+include_recipe "#{cookbook_name}::_install_rbenv"
+include_recipe "#{cookbook_name}::_install_nvm"
+include_recipe "#{cookbook_name}::_deploy_source"
+include_recipe "#{cookbook_name}::_deploy_service"

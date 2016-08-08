@@ -1,0 +1,114 @@
+PLUGINS=all
+DEFAULT_URL=<%= @default_url %>
+SECRET_TOKEN=<%= @secret_token %>
+# FORCE_SSL=1 # optional, to require SSL
+
+<% if @github %>
+<%= render "env/github.erb", variables: @github %>
+<% end %>
+<% if @google %>
+<%= render "env/google.erb", variables: @google %>
+<% end %>
+
+<% if @jira %>
+<%= render "env/jira.erb", variables: @jira %>
+<% end %>
+<% if @slack %>
+<%= render "env/slack.erb", variables: @slack %>
+<% end %>
+
+GITHUB_TOKEN=<%= @github.fetch('token', nil) %>
+
+# Settings for Github authentication
+AUTH_GITHUB=<%= @github.fetch('client_id', false) ? 'true', 'false' %>
+GITHUB_CLIENT_ID=<%= @github.fetch('client_id', nil) %>
+GITHUB_SECRET=<%= @github.fetch('secret', nil) %>
+GITHUB_ORGANIZATION=<%= @github.fetch('organization', nil) %>
+GITHUB_ADMIN_TEAM=<%= @github.fetch('admin_team', nil) %>
+GITHUB_DEPLOY_TEAM=<%= @github.fetch('deploy_team', nil) %>
+GITHUB_WEB_URL=<%= @github.fetch('web_url', 'https://github.com') %>
+GITHUB_API_URL=<%= @github.fetch('api_url', 'https://api.github.com') %>
+GITHUB_STATUS_URL=<%= @github.fetch('status_url', 'https://status.github.com') %>
+
+<% if @google %>
+# Settings for Google authentication
+AUTH_GOOGLE=<%= @google.fetch('client_id', false) ? 'true', 'false' %>
+GOOGLE_CLIENT_ID=<%= @google.fetch('client_id', nil) %>
+GOOGLE_CLIENT_SECRET=<%= @google.fetch('client_secret', nil) %>
+GOOGLE_DOMAIN=<%= @google.fetch('domain', nil) %>
+
+<% end %>
+
+# BYPASS_EMAIL= # optional, email destination that is alerted about buddy_check bypasses
+# BYPASS_JIRA_EMAIL= # optional, jira email destination that is alerted about buddy_check bypasses
+# BYPASS_DETAILS= # optional 'Some text explaining bypass procedure'
+# BUDDY_CHECK_FEATURE=1 # optional, enable buddy_check feature
+
+# BUDDY_CHECK_TIME_LIMIT=20 # optional, max minutes a deploy is pending
+
+# PROJECT_CREATED_NOTIFY_ADDRESS=bobby-the-security-auditor@yourcompany.com
+# PROJECT_DELETED_NOTIFY_ADDRESS=bobby-the-security-auditor@yourcompany.com  #if not set uses PROJECT_CREATED_NOTIFY_ADDRESS
+
+# DEPLOY_GROUP_FEATURE=1 # optional, enable Environments and DeployGroups
+
+# AIRBRAKE_API_KEY= # optional, report errors to airbrake
+
+## Docker
+# DOCKER_FEATURE=1 # optional, experimental docker support
+# DOCKER_REGISTRY= # required, where to push/pull your docker images
+# DOCKER_URL= # optional, use this url instead of connecting to unix socket
+# DOCKER_KEEP_BUILT_IMGS # optional. Set to 1 to keep built images for cache. Fills the disk so some cleanup machanism is needed
+# DOCKER_REPO_NAMESPACE=samson # optional. Configure a namespace that all images should be pushed to, useful for access management.
+
+# FLOWDOCK_API_TOKEN= # optional. only required for the flowdock integration user mention autocomplete in the buddy approval request form (when BUDDY_CHECK_FEATURE=1). Buddy approval notification would still work without this
+
+## Slack
+# SLACK_API_TOKEN= # optional. only required for the slack integration user mention autocomplete in the buddy approval request form (when BUDDY_CHECK_FEATURE=1). Buddy approval notification would still work without this
+# SLACK_CLIENT_ID= # optional, see plugins/slack_app/README.md
+# SLACK_CLIENT_SECRET= # optional, see plugins/slack_app/README.md
+# SLACK_VERIFICATION_TOKEN= # optional, see plugins/slack_app/README.md
+
+
+# ENV_WHITELIST=FOOBAR,BARFOO # optional, list of env values that should be passed to the command when deploying
+
+## EXPORT_JOB_DOWNLOADED_AGE determines how long a csv export job and file should
+## persist after it is downloaded before cleanup, default is 12.hours.
+##
+## EXPORT_JOB_MAX_AGE determines how long a csv export job and file should persist
+## from it's creation date, default is 1.day.
+##
+## Both fields takes an integer
+## Do not use Ruby time syntax value (1.month, 1.week, 3.days)
+## it will be parsed into an integer and result in 1 second or 3 seconds, and
+## result in report deletion before downloading
+# EXPORT_JOB_DOWNLOADED_AGE={optional, eg 43200 }
+# EXPORT_JOB_MAX_AGE={optional, eg 86400 }
+
+## JIRA_BASE_URL, if set, would enable the auto-detection of JIRA issue keys
+## (e.g., KEY-123, SAMSON-456) in the titles and bodies of the pull requests
+## associated with a deploy. The auto-detected JIRA issues will be displayed
+## and linked (by prepending JIRA_BASE_URL) in the "JIRA Issues" tab of a deploy
+##
+## Full absolute JIRA URLs will still be detected, and they will take precedence
+## over generated ones (i.e., if JIRA_BASE_URL is https://a.atlassian.net/browse/
+## and both "KEY-123" and "http://z.atlassian.net/browse/KEY-123" appear in a
+## pull request's title and body, only "http://z.atlassian.net/browse/KEY-123"
+## would appear in the "JIRA Issues" tab).
+##
+# JIRA_BASE_URL= # optional, eg. https://jira.atlassian.net/browse/
+
+# REQUEST_ACCESS_FEATURE=1 # optional, enable request access link
+# REQUEST_ACCESS_EMAIL_ADDRESS_LIST= # optional, space separated list of email addresses (managers mailing list, JIRA, etc.)
+# REQUEST_ACCESS_EMAIL_PREFIX= # optional, email subject prefix
+
+## Secret storage
+# SECRET_STORAGE_BACKEND= # optional, should be one of: SecretStorage::DbBackend (default) or SecretStorage::HashicorpVault
+
+## Kubernets sidecar
+# SECRET_SIDECAR_IMAGE= # optional, path to the docker image that built from the secret_puller service.  service will be disabled w/o it
+
+
+## Jenkins, optional, for triggering Jenkins builds after deployment
+# JENKINS_URL= # server_url of jenkins
+# JENKINS_USERNAME= # user id
+# JENKINS_API_KEY= # API Token from user / Configure page

@@ -1,0 +1,4 @@
+threads <%= @threads_min || 8 %>, <%= @threads_max || 250 %>
+preload_app!
+
+bind 'tcp://<%= @bind_host || "0.0.0.0" %>:<%= @bind_port || 3000 %>'

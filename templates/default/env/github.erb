@@ -1,0 +1,12 @@
+GITHUB_TOKEN=<%= @token %>
+
+# Settings for Github authentication
+AUTH_GITHUB=<%= @client_id ? 'true' : 'false' %>
+GITHUB_CLIENT_ID=<%= @client_id %>
+GITHUB_SECRET=<%= @secret %>
+GITHUB_ORGANIZATION=<%= @organization %>
+GITHUB_ADMIN_TEAM=<%= @admin_team %>
+GITHUB_DEPLOY_TEAM=<%= @deploy_team %>
+GITHUB_WEB_URL=<%= @web_url || 'https://github.com' %>
+GITHUB_API_URL=<%= @api_url || 'https://api.github.com' %>
+GITHUB_STATUS_URL=<%= @status_url || 'https://status.github.com' %>
