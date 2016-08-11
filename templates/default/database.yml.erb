@@ -12,14 +12,7 @@ common: &common
   pool: <%= @pool || 5 %>
   timeout: <%= @timeout || 5000 %>
 
-production:
+<%= @environment %>:
   <<: *common
   database: <%= @path || 'samson' %>
 
-development:
-  <<: *common
-  database: <%= @path_dev || 'samson_dev' %>
-
-test:
-  <<: *common
-  database: <%= @path_test || 'samson_test' %>
