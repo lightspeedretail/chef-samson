@@ -1,0 +1,15 @@
+AIRBRAKE_API_KEY=<%= @airbrake_api_key %>
+DEFAULT_URL=<%= @default_url %>
+DEPLOY_GROUP_FEATURE=<%= @deploy_group_feature ? 1 : 0 %>
+ENV_WHITELIST=<%= Array(@env_whitelist).join(',') %>
+EXPORT_JOB_DOWNLOADED_AGE=<%= @export_job_downloaded_age %>
+EXPORT_JOB_MAX_AGE=<%= @export_job_max_age %>
+FLOWDOCK_API_TOKEN=<%= @flowdock_api_token %>
+FORCE_SSL=<%= @force_ssl ? 1 : 0 %>
+PLUGINS="<%= @plugins.join(' ') %>"
+PROJECT_CREATED_NOTIFY_ADDRESS=<%= @project_created_notify_address %>
+PROJECT_DELETED_NOTIFY_ADDRESS=<%= @project_deleted_notify_address %>
+SECRET_SIDECAR_IMAGE=<%= @secret_sidecar_image %>
+SECRET_STORAGE_BACKEND=<%= @secret_storage_backend %>
+SECRET_TOKEN=<%= @secret_token %>
+

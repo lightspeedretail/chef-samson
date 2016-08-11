@@ -1,5 +1,5 @@
-DOCKER_FEATURE=<%= @docker['registry'] ? 1 : 0 %>
-DOCKER_REGISTRY<%= @docker['registry'] %>
-DOCKER_URL=<%= @docker['url'] %>
-DOCKER_KEEP_BUILT_IMGS=<%= @docker['keep_built_imags'] ? 1 : 0 %>
-DOCKER_REPO_NAMESPACE=<%= @docker['repo_namespace'] || 'samson' %>
+DOCKER_FEATURE=<%= @registry ? 1 : 0 %>
+DOCKER_REGISTRY<%= @registry %>
+DOCKER_URL=<%= @url %>
+DOCKER_KEEP_BUILT_IMGS=<%= @keep_built_imags ? 1 : 0 %>
+DOCKER_REPO_NAMESPACE=<%= @repo_namespace || 'samson' %>
