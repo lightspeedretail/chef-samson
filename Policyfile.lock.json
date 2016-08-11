@@ -1,5 +1,5 @@
 {
-  "revision_id": "9cdd26690f057af9507251fde6c1b60182a0a63c30c07ac9ce04ca31865ea642",
+  "revision_id": "fd46acd7743b2a2076fa3bda6dee16b11a2dd8dcce58e163ac62366ea062d04d",
   "name": "samson",
   "run_list": [
     "recipe[samson::default]"
@@ -7,18 +7,18 @@
   "cookbook_locks": {
     "samson": {
       "version": "0.1.0",
-      "identifier": "573e440d60d4beba129f63bc0f612181a0d4a186",
-      "dotted_decimal_identifier": "24556784976975038.52374821450551137.36840632787334",
+      "identifier": "4b51a9907c945f496ed0ff83159491d2472c4e75",
+      "dotted_decimal_identifier": "21200411968705631.20669517218911636.160332323245685",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": null,
-        "working_tree_clean": true,
-        "published": false,
+        "remote": "git@github.com:JonathanSerafini/chef-samson.git",
+        "revision": "6b1d98e62d423ddc96ed9ab67575f64065544a04",
+        "working_tree_clean": false,
+        "published": true,
         "synchronized_remote_branches": [
-
+          "origin/master"
         ]
       },
       "source_options": {
@@ -265,6 +265,24 @@
       ]
     ],
     "dependencies": {
+      "samson (0.1.0)": [
+        [
+          "common_deploy",
+          "~> 0.2.0"
+        ],
+        [
+          "nvm",
+          "~> 0.1.7"
+        ],
+        [
+          "ruby_rbenv",
+          "~> 1.0.0"
+        ],
+        [
+          "ruby_build",
+          "~> 1.0.0"
+        ]
+      ],
       "common_deploy (0.2.2)": [
         [
           "common_attrs",
@@ -366,24 +384,6 @@
         [
           "yum-epel",
           ">= 0.0.0"
-        ]
-      ],
-      "samson (0.1.0)": [
-        [
-          "common_deploy",
-          "~> 0.2.0"
-        ],
-        [
-          "nvm",
-          "~> 0.1.7"
-        ],
-        [
-          "ruby_rbenv",
-          "~> 1.0.0"
-        ],
-        [
-          "ruby_build",
-          "~> 1.0.0"
         ]
       ]
     }
