@@ -1,5 +1,5 @@
 group node['samson']['group'] do
-  only_if { node['samson']['source']['manage_user'] }
+  only_if { node['samson']['manage_user'] }
 end
 
 user node['samson']['user'] do
@@ -9,7 +9,7 @@ user node['samson']['user'] do
   comment 'Samson serice account'
   password nil
   supports manage_home: false
-  only_if { node['samson']['source']['manage_user'] }
+  only_if { node['samson']['manage_user'] }
 end
 
 # Optionaly create the root directory for situations where the parent
