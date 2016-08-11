@@ -24,8 +24,9 @@ common_deploy_revision node['samson']['root_dir'] do
   create_on_build %w(vendor/gems)
   symlink_on_build 'log' => 'log'
 
-  support_publish true
-  support_migrate true
+  support_force repo_config['build']['support_force']
+  support_migrate repo_config['build']['support_migrate']
+  support_publish repo_config['build']['support_publish']
 
   after_cache do
     disabled_gem_groups = %w(postgres sqlite mysql2)
