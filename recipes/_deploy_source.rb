@@ -71,7 +71,9 @@ common_deploy_revision node['samson']['root_dir'] do
   after_build do
     release_template shared_name('config/database.yml') do
       path release_path('config/database.yml')
-      variables app_config.to_hash['database']
+      variables app_config.to_hash['database'].merge(
+                  'environment' => app_config['environment']
+                )
       notifies :restart, node['samson']['service']['name'], :delayed
     end
 
