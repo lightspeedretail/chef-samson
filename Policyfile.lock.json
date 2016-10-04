@@ -1,5 +1,5 @@
 {
-  "revision_id": "cdf95e3544b69eaba9478c1a10164d2c324f39855865911837e567a925fca2a8",
+  "revision_id": "ca2276d7046e198acffd6148eb6bafa24a5330bf223c59f45ff264038f69bcaf",
   "name": "samson",
   "run_list": [
     "recipe[samson::default]"
@@ -7,23 +7,44 @@
   "cookbook_locks": {
     "samson": {
       "version": "0.1.0",
-      "identifier": "c62afe7388c129401c3a92570302b665abbf5db4",
-      "dotted_decimal_identifier": "55779317737111849.18045436398338818.200547789397428",
+      "identifier": "95954a03f31655aa9d81198eb0b83f273cec35b7",
+      "dotted_decimal_identifier": "42103916656268885.48023923845935288.69437758387639",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:JonathanSerafini/chef-samson.git",
-        "revision": "685f68b71f9e5df32c452ecda29bc68dbcfd7bf6",
+        "remote": null,
+        "revision": "98f88e764d6f48d7792217e652f054c176b334f5",
         "working_tree_clean": false,
-        "published": true,
+        "published": false,
         "synchronized_remote_branches": [
-          "origin/HEAD -> origin/master",
-          "origin/master"
+
         ]
       },
       "source_options": {
         "path": "."
+      }
+    },
+    "apt": {
+      "version": "4.0.2",
+      "identifier": "51664f9858292385ed1c36cb8296b40046838435",
+      "dotted_decimal_identifier": "22911965157927203.37696877336691350.197913276023861",
+      "cache_key": "apt-4.0.2-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/4.0.2/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/apt/versions/4.0.2/download",
+        "version": "4.0.2"
+      }
+    },
+    "compat_resource": {
+      "version": "12.14.7",
+      "identifier": "8d958f9606f7e6c7469bebb54cb7bd2141dc8745",
+      "dotted_decimal_identifier": "39852415646103526.56091155853823159.207950536542021",
+      "cache_key": "compat_resource-12.14.7-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.14.7/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.14.7/download",
+        "version": "12.14.7"
       }
     },
     "common_deploy": {
@@ -101,17 +122,6 @@
       "source_options": {
         "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/mingw/versions/1.2.4/download",
         "version": "1.2.4"
-      }
-    },
-    "compat_resource": {
-      "version": "12.14.7",
-      "identifier": "8d958f9606f7e6c7469bebb54cb7bd2141dc8745",
-      "dotted_decimal_identifier": "39852415646103526.56091155853823159.207950536542021",
-      "cache_key": "compat_resource-12.14.7-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.14.7/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/compat_resource/versions/12.14.7/download",
-        "version": "12.14.7"
       }
     },
     "git": {
@@ -194,6 +204,14 @@
         ">= 0.0.0"
       ],
       [
+        "apt",
+        "= 4.0.2"
+      ],
+      [
+        "compat_resource",
+        "= 12.14.7"
+      ],
+      [
         "common_deploy",
         "= 0.2.2"
       ],
@@ -222,10 +240,6 @@
         "= 1.2.4"
       ],
       [
-        "compat_resource",
-        "= 12.14.7"
-      ],
-      [
         "git",
         "= 5.0.1"
       ],
@@ -251,6 +265,15 @@
       ]
     ],
     "dependencies": {
+      "apt (4.0.2)": [
+        [
+          "compat_resource",
+          ">= 12.10.0"
+        ]
+      ],
+      "compat_resource (12.14.7)": [
+
+      ],
       "common_deploy (0.2.2)": [
         [
           "common_attrs",
@@ -303,9 +326,6 @@
           ">= 0.0.0"
         ]
       ],
-      "compat_resource (12.14.7)": [
-
-      ],
       "git (5.0.1)": [
         [
           "build-essential",
@@ -345,6 +365,10 @@
         ]
       ],
       "samson (0.1.0)": [
+        [
+          "apt",
+          "~> 4.0.2"
+        ],
         [
           "common_deploy",
           "~> 0.2.0"

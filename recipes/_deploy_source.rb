@@ -12,7 +12,7 @@ common_deploy_revision node['samson']['root_dir'] do
   environment 'RACK_ENV' => app_config['environment'],
               'RAILS_ENV' => app_config['environment'],
               'PATH' => [
-                "/usr/local/rbenv/bin",
+                "#{node['samson']['root_dir']}/rbenv/bin",
                 "/usr/local/src/nvm/versions/node/v6.1.0/bin",
                 ENV['PATH']
               ].join(':')
