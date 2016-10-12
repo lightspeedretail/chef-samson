@@ -8,7 +8,7 @@ user node['samson']['user'] do
   shell   '/bin/false'
   comment 'Samson service account'
   password nil
-  supports manage_home: true
+  supports manage_home: false
   only_if { node['samson']['manage_user'] }
 end
 
