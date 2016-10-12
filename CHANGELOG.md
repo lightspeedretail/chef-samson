@@ -1,7 +1,7 @@
 samson
 ======
 
-v0.1.2
+v0.2.0
 ------
 * DO-1981 Made the database template's output sensitive to hide the DB credentials
 * DO-1981 Added a default value for the secret_storage_backend since a blank parameter prevents the app from starting
