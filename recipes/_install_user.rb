@@ -4,11 +4,11 @@ end
 
 user node['samson']['user'] do
   group   node['samson']['group']
-  home    node['samson']['root_dir']
+  home    node['samson']['home_dir']
   shell   '/bin/false'
-  comment 'Samson serice account'
+  comment 'Samson service account'
   password nil
-  supports manage_home: false
+  supports manage_home: true
   only_if { node['samson']['manage_user'] }
 end
 
