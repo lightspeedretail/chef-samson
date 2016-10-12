@@ -1,6 +1,6 @@
 default['rbenv']['user_installs'] = [
   { 'user'    => node['samson']['user'],
-    'home'    => node['samson']['root_dir'],
+    'home'    => node['samson']['home_dir'],
     'rubies'  => [node['samson']['ruby']['version']]
   }
 ]

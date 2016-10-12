@@ -10,6 +10,6 @@ PLUGINS="<%= @plugins.join(' ') %>"
 PROJECT_CREATED_NOTIFY_ADDRESS=<%= @project_created_notify_address %>
 PROJECT_DELETED_NOTIFY_ADDRESS=<%= @project_deleted_notify_address %>
 SECRET_SIDECAR_IMAGE=<%= @secret_sidecar_image %>
-SECRET_STORAGE_BACKEND=<%= @secret_storage_backend %>
+SECRET_STORAGE_BACKEND=<%= @secret_storage_backend || 'SecretStorage::DbBackend' %> <%# Having the key overrides the default value in the code even when empty %>
 SECRET_TOKEN=<%= @secret_token %>
-
+MEMCACHE_SERVERS=<%= @memcache_servers %>

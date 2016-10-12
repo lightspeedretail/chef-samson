@@ -4,6 +4,9 @@ samson
 v0.1.2
 ------
 * DO-1981 Made the database template's output sensitive to hide the DB credentials
+* DO-1981 Added a default value for the secret_storage_backend since a blank parameter prevents the app from starting
+* DO-1981 Added the memcache_servers config parameters to use a non-local memcache service
+* DO-1981 Made the home of the samson user different from the samson root folder to facilitate deploying under other users
 
 v0.1.1
 ------
