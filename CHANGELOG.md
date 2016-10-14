@@ -1,6 +1,10 @@
 samson
 ======
 
+v0.3.0
+------
+* DO-2005 Added support for custom configs in the .env file
+
 v0.2.0
 ------
 * DO-1981 Made the database template's output sensitive to hide the DB credentials
