@@ -4,6 +4,7 @@ samson
 v0.3.0
 ------
 * DO-2005 Added support for custom configs in the .env file
+* Fixed potential bad template rendition bug for base configs items
 
 v0.2.0
 ------
