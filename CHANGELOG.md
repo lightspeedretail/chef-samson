@@ -5,6 +5,8 @@ v0.3.0
 ------
 * DO-2005 Added support for custom configs in the .env file
 * Fixed potential bad template rendition bug for base configs items
+* Moved the asset precompiling to after_build to allow for the creation of config files to handle plugins
+* Made the asset precompiling be triggered by the env template to allow for plugin changes to take effect
 
 v0.2.0
 ------

@@ -48,13 +48,6 @@ common_deploy_revision node['samson']['root_dir'] do
       user new_resource.user
     end
 
-    rbenv_script 'rake assets:precompile' do
-      code %(rake assets:precompile)
-      cwd release_path
-      rbenv_version node['samson']['ruby']['version']
-      environment new_resource.environment
-      user new_resource.user
-    end
   end
 
   before_build do
@@ -79,16 +72,26 @@ common_deploy_revision node['samson']['root_dir'] do
       notifies :restart, node['samson']['service']['name'], :delayed
     end
 
-    release_template shared_name('config/puma.rb') do
-      path release_path('config/puma.rb')
-      variables app_config.to_hash['puma']
-      notifies :restart, node['samson']['service']['name'], :delayed
-    end
-
     release_template '.env' do
       source 'env.erb'
       sensitive true
       variables app_config.to_hash
+      notifies :restart, node['samson']['service']['name'], :delayed
+      notifies :run, 'rbenv_script[rake assets:precompile]', :immediately
+    end
+
+    rbenv_script 'rake assets:precompile' do
+      code %(RAILS_ENV=production rake assets:precompile)
+      cwd release_path
+      rbenv_version node['samson']['ruby']['version']
+      environment new_resource.environment
+      user new_resource.user
+      action :nothing
+    end
+
+    release_template shared_name('config/puma.rb') do
+      path release_path('config/puma.rb')
+      variables app_config.to_hash['puma']
       notifies :restart, node['samson']['service']['name'], :delayed
     end
   end
