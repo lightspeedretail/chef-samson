@@ -1,6 +1,10 @@
 samson
 ======
 
+v0.4.0
+------
+* Added ENV vars required for later versions of Samson
+
 v0.3.0
 ------
 * DO-2005 Added support for custom configs in the .env file
