@@ -1,9 +1,8 @@
-AIRBRAKE_API_KEY=<%= @airbrake_api_key %>
 DEFAULT_URL=<%= @default_url %>
 DEPLOY_GROUP_FEATURE=<%= @deploy_group_feature ? 1 : 0 %>
 ENV_WHITELIST=<%= Array(@env_whitelist).join(',') %>
-EXPORT_JOB_DOWNLOADED_AGE=<%= @export_job_downloaded_age %>
-EXPORT_JOB_MAX_AGE=<%= @export_job_max_age %>
+EXPORT_JOB_DOWNLOADED_AGE=<%= @export_job_downloaded_age || 12 %>
+EXPORT_JOB_MAX_AGE=<%= @export_job_max_age  || 1 %>
 FLOWDOCK_API_TOKEN=<%= @flowdock_api_token %>
 FORCE_SSL=<%= @force_ssl ? 1 : 0 %>
 PLUGINS="<%= @plugins.join(' ') %>"
@@ -13,6 +12,7 @@ SECRET_SIDECAR_IMAGE=<%= @secret_sidecar_image %>
 <%# Having the SECRET_STORAGE_BACKEND key overrides the default value in the code even when empty %>
 SECRET_STORAGE_BACKEND=<%= @secret_storage_backend || 'SecretStorage::DbBackend' %>
 SECRET_TOKEN=<%= @secret_token %>
+CACHE_STORE=<%= @cache_store || 'memory' %>
 MEMCACHE_SERVERS=<%= Array(@memcache_servers).join(',') %>
 <% @custom_config_items.each do |conf_name, conf_value| %>
 <%= conf_name %>=<%= conf_value %>
