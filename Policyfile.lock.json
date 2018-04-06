@@ -1,27 +1,25 @@
 {
-  "revision_id": "eecfcb43c318fc1b6bb83bb28a64b209373a738a6ef95fd30347b3b4d6bf5047",
+  "revision_id": "9e22a503d8aeaf72826f592ca3c333dd045a1993f5a8dd2a70d29a5bd337a189",
   "name": "samson",
   "run_list": [
     "recipe[samson::default]"
   ],
   "cookbook_locks": {
     "samson": {
-      "version": "0.4.0",
-      "identifier": "b6ea410f713c9154d53b388109a7538682b1a89f",
-      "dotted_decimal_identifier": "51486010914192529.23878348371462567.91837183404191",
+      "version": "1.0.0",
+      "identifier": "355d47ea69542683e2ff50b7a107fe543ea94a95",
+      "dotted_decimal_identifier": "15020737222497318.37122808147845383.279637781990037",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:lightspeedretail/chef-samson.git",
-        "revision": "5a09817811817cc4f05ea9c832d1f884c564b27f",
+        "remote": null,
+        "revision": "6807260f925fd38c09d1440c7ab60176c9081181",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
           "origin/HEAD -> origin/master",
-          "origin/master",
-          "origin/v0.4.0-master-samson-helper",
-          "origin/v1.0.0-new-shiny-samson-revision"
+          "origin/master"
         ]
       },
       "source_options": {
@@ -29,14 +27,15 @@
       }
     },
     "common_deploy": {
-      "version": "0.2.2",
-      "identifier": "5dfec734e3e3401c61cb6ef6de721a0a81134bd0",
-      "dotted_decimal_identifier": "26457304373388096.7988825715826290.28632417520592",
-      "cache_key": "common_deploy-0.2.2-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/common_deploy/versions/0.2.2/download",
+      "version": "0.2.0",
+      "identifier": "9cdf8ad2cd203129737cabdc983767ecc671a19a",
+      "dotted_decimal_identifier": "44155883702001713.11667453341636663.114266639278490",
+      "cache_key": "common_deploy-aefd0b07c74a81d34399f94633ade8089dac638f",
+      "origin": "git@github.com:lightspeedretail/chef-common_deploy.git",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/common_deploy/versions/0.2.2/download",
-        "version": "0.2.2"
+        "git": "git@github.com:lightspeedretail/chef-common_deploy.git",
+        "revision": "aefd0b07c74a81d34399f94633ade8089dac638f",
+        "tag": "v0.2.0"
       }
     },
     "nvm": {
@@ -51,25 +50,36 @@
       }
     },
     "ruby_rbenv": {
-      "version": "1.0.1",
-      "identifier": "db3535464605f3920fc2647b9408600e0d96a8d9",
-      "dotted_decimal_identifier": "61701522828166643.41112674183648264.105613473786073",
-      "cache_key": "ruby_rbenv-1.0.1-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_rbenv/versions/1.0.1/download",
+      "version": "1.1.0",
+      "identifier": "962a041c71383fa5973edb5ba52301b40502da69",
+      "dotted_decimal_identifier": "42267443652016191.46609667381241123.1872689814121",
+      "cache_key": "ruby_rbenv-1.1.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_rbenv/versions/1.1.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_rbenv/versions/1.0.1/download",
-        "version": "1.0.1"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_rbenv/versions/1.1.0/download",
+        "version": "1.1.0"
       }
     },
     "ruby_build": {
-      "version": "1.0.0",
-      "identifier": "c23c2100ab95b35c77b4bbfaf46d83415964a4ea",
-      "dotted_decimal_identifier": "54672257924699571.26027315988984941.144316695880938",
-      "cache_key": "ruby_build-1.0.0-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_build/versions/1.0.0/download",
+      "version": "1.1.0",
+      "identifier": "218b2c96848e3f24d23c45f3fbd3ccc28909623b",
+      "dotted_decimal_identifier": "9441697851543103.10364255475071955.225135894815291",
+      "cache_key": "ruby_build-1.1.0-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_build/versions/1.1.0/download",
       "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_build/versions/1.0.0/download",
-        "version": "1.0.0"
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/ruby_build/versions/1.1.0/download",
+        "version": "1.1.0"
+      }
+    },
+    "common_attrs": {
+      "version": "0.4.6",
+      "identifier": "5455a603538906945c0e0c7c839ac98c12cbd914",
+      "dotted_decimal_identifier": "23738069552433414.41759511961961370.221603447953684",
+      "cache_key": "common_attrs-0.4.6-supermarket.chef.io",
+      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/common_attrs/versions/0.4.6/download",
+      "source_options": {
+        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/common_attrs/versions/0.4.6/download",
+        "version": "0.4.6"
       }
     },
     "build-essential": {
@@ -103,17 +113,6 @@
       "source_options": {
         "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/yum-epel/versions/3.1.0/download",
         "version": "3.1.0"
-      }
-    },
-    "common_attrs": {
-      "version": "0.4.6",
-      "identifier": "5455a603538906945c0e0c7c839ac98c12cbd914",
-      "dotted_decimal_identifier": "23738069552433414.41759511961961370.221603447953684",
-      "cache_key": "common_attrs-0.4.6-supermarket.chef.io",
-      "origin": "https://supermarket.chef.io:443/api/v1/cookbooks/common_attrs/versions/0.4.6/download",
-      "source_options": {
-        "artifactserver": "https://supermarket.chef.io:443/api/v1/cookbooks/common_attrs/versions/0.4.6/download",
-        "version": "0.4.6"
       }
     },
     "seven_zip": {
@@ -164,7 +163,7 @@
       ],
       [
         "common_deploy",
-        "= 0.2.2"
+        ">= 0.0.0"
       ],
       [
         "nvm",
@@ -172,11 +171,15 @@
       ],
       [
         "ruby_rbenv",
-        "= 1.0.1"
+        "= 1.1.0"
       ],
       [
         "ruby_build",
-        "= 1.0.0"
+        "= 1.1.0"
+      ],
+      [
+        "common_attrs",
+        "= 0.4.6"
       ],
       [
         "build-essential",
@@ -189,10 +192,6 @@
       [
         "yum-epel",
         "= 3.1.0"
-      ],
-      [
-        "common_attrs",
-        "= 0.4.6"
       ],
       [
         "seven_zip",
@@ -208,7 +207,7 @@
       ]
     ],
     "dependencies": {
-      "samson (0.4.0)": [
+      "samson (1.0.0)": [
         [
           "common_deploy",
           "~> 0.2.0"
@@ -219,14 +218,14 @@
         ],
         [
           "ruby_rbenv",
-          "~> 1.0.0"
+          "~> 1.1.0"
         ],
         [
           "ruby_build",
-          "~> 1.0.0"
+          "~> 1.1.0"
         ]
       ],
-      "common_deploy (0.2.2)": [
+      "common_deploy (0.2.0)": [
         [
           "common_attrs",
           ">= 0.0.0"
@@ -242,17 +241,24 @@
           ">= 0.0.0"
         ]
       ],
-      "ruby_rbenv (1.0.1)": [
+      "ruby_rbenv (1.1.0)": [
         [
           "ruby_build",
           ">= 0.0.0"
         ]
       ],
-      "ruby_build (1.0.0)": [
+      "ruby_build (1.1.0)": [
         [
           "yum-epel",
           ">= 0.0.0"
+        ],
+        [
+          "git",
+          ">= 0.0.0"
         ]
+      ],
+      "common_attrs (0.4.6)": [
+
       ],
       "build-essential (8.1.1)": [
         [
@@ -271,9 +277,6 @@
         ]
       ],
       "yum-epel (3.1.0)": [
-
-      ],
-      "common_attrs (0.4.6)": [
 
       ],
       "seven_zip (2.0.2)": [
