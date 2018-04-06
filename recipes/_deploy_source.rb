@@ -63,25 +63,24 @@ common_deploy_revision node['samson']['root_dir'] do
   end
 
   after_build do
-    release_template shared_name('config/database.yml') do
-      path release_path('config/database.yml')
+    release_template 'config/database.yml' do
       sensitive true
       variables app_config.to_hash['database'].merge(
                   'environment' => app_config['environment']
                 )
-      notifies :restart, node['samson']['service']['name'], :delayed
+      # notifies :restart, 'service[samson]', :delayed
     end
 
     release_template '.env' do
       source 'env.erb'
       sensitive true
       variables app_config.to_hash
-      notifies :restart, node['samson']['service']['name'], :delayed
+      # notifies :restart, 'service[samson]', :delayed
       notifies :run, 'rbenv_script[rake assets:precompile]', :immediately
     end
 
     rbenv_script 'rake assets:precompile' do
-      code %(RAILS_ENV=production rake assets:precompile)
+      code %(RAILS_ENV=production PRECOMPILE=1 rake assets:precompile assets:clean[0])
       cwd release_path
       rbenv_version node['samson']['ruby']['version']
       environment new_resource.environment
@@ -92,7 +91,7 @@ common_deploy_revision node['samson']['root_dir'] do
     release_template shared_name('config/puma.rb') do
       path release_path('config/puma.rb')
       variables app_config.to_hash['puma']
-      notifies :restart, node['samson']['service']['name'], :delayed
+      # notifies :restart, 'service[samson]', :delayed
     end
   end
 
@@ -100,7 +99,7 @@ common_deploy_revision node['samson']['root_dir'] do
     ruby_block 'notify services' do
       block do
       end
-      notifies :restart, node['samson']['service']['name'], :delayed
+      # notifies :restart, 'service[samson]', :delayed
     end
   end
 
@@ -112,5 +111,24 @@ common_deploy_revision node['samson']['root_dir'] do
       environment new_resource.environment
       user new_resource.user
     end
+  end
+end
+
+application = resources(common_deploy_revision: node['samson']['root_dir'])
+
+template '/etc/init/samson.conf' do
+  source 'service/upstart.conf.erb'
+  variables user: application.user,
+            group: application.group,
+            cwd: application.current_path,
+            environment: app_config['environment'],
+            name: 'samson'
+  notifies :restart, 'service[samson]', :delayed
+end
+
+service 'samson' do
+  action :start
+  only_if do
+    ::File.exist?(application.current_path)
   end
 end
