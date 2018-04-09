@@ -1,5 +1,5 @@
 {
-  "revision_id": "9e22a503d8aeaf72826f592ca3c333dd045a1993f5a8dd2a70d29a5bd337a189",
+  "revision_id": "03ee75aa56f7a4f81d382002350a7c3f46e1210a97b5de0ad4a602d62ae83077",
   "name": "samson",
   "run_list": [
     "recipe[samson::default]"
@@ -7,19 +7,18 @@
   "cookbook_locks": {
     "samson": {
       "version": "1.0.0",
-      "identifier": "355d47ea69542683e2ff50b7a107fe543ea94a95",
-      "dotted_decimal_identifier": "15020737222497318.37122808147845383.279637781990037",
+      "identifier": "193c4814394bc662f30255a6b2ea5dcc91cc1ced",
+      "dotted_decimal_identifier": "7103154692377542.27851739070116586.103133200784621",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": null,
-        "revision": "6807260f925fd38c09d1440c7ab60176c9081181",
+        "remote": "git@github.com:lightspeedretail/chef-samson.git",
+        "revision": "aa350b2a99037f830270d8a52cd8e77ffdd9aa7f",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/HEAD -> origin/master",
-          "origin/master"
+          "origin/v1.0.0-bla-new-samson"
         ]
       },
       "source_options": {
@@ -207,24 +206,6 @@
       ]
     ],
     "dependencies": {
-      "samson (1.0.0)": [
-        [
-          "common_deploy",
-          "~> 0.2.0"
-        ],
-        [
-          "nvm",
-          "~> 0.1.7"
-        ],
-        [
-          "ruby_rbenv",
-          "~> 1.1.0"
-        ],
-        [
-          "ruby_build",
-          "~> 1.1.0"
-        ]
-      ],
       "common_deploy (0.2.0)": [
         [
           "common_attrs",
@@ -293,6 +274,24 @@
       ],
       "windows (4.1.4)": [
 
+      ],
+      "samson (1.0.0)": [
+        [
+          "common_deploy",
+          "~> 0.2.0"
+        ],
+        [
+          "nvm",
+          "~> 0.1.7"
+        ],
+        [
+          "ruby_rbenv",
+          "~> 1.1.0"
+        ],
+        [
+          "ruby_build",
+          "~> 1.1.0"
+        ]
       ]
     }
   }

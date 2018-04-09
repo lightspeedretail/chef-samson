@@ -68,14 +68,14 @@ common_deploy_revision node['samson']['root_dir'] do
       variables app_config.to_hash['database'].merge(
                   'environment' => app_config['environment']
                 )
-      # notifies :restart, 'service[samson]', :delayed
+      notifies :restart, 'service[samson]', :delayed
     end
 
     release_template '.env' do
       source 'env.erb'
       sensitive true
       variables app_config.to_hash
-      # notifies :restart, 'service[samson]', :delayed
+      notifies :restart, 'service[samson]', :delayed
       notifies :run, 'rbenv_script[rake assets:precompile]', :immediately
     end
 
@@ -91,7 +91,7 @@ common_deploy_revision node['samson']['root_dir'] do
     release_template shared_name('config/puma.rb') do
       path release_path('config/puma.rb')
       variables app_config.to_hash['puma']
-      # notifies :restart, 'service[samson]', :delayed
+      notifies :restart, 'service[samson]', :delayed
     end
   end
 
@@ -99,7 +99,7 @@ common_deploy_revision node['samson']['root_dir'] do
     ruby_block 'notify services' do
       block do
       end
-      # notifies :restart, 'service[samson]', :delayed
+      notifies :restart, 'service[samson]', :delayed
     end
   end
 
