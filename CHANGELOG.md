@@ -1,6 +1,10 @@
 samson
 ======
 
+v1.0.0
+------
+* Default to ruby 2.5.0 and samson v2207
+
 v0.4.0
 ------
 * Added ENV vars required for later versions of Samson
