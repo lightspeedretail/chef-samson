@@ -1,24 +1,25 @@
 {
-  "revision_id": "03ee75aa56f7a4f81d382002350a7c3f46e1210a97b5de0ad4a602d62ae83077",
+  "revision_id": "5f313843e240ba5e80e5ebca99adb63fa18a088a03e8578ace6d9fac2c6a511d",
   "name": "samson",
   "run_list": [
     "recipe[samson::default]"
   ],
   "cookbook_locks": {
     "samson": {
-      "version": "1.0.0",
-      "identifier": "193c4814394bc662f30255a6b2ea5dcc91cc1ced",
-      "dotted_decimal_identifier": "7103154692377542.27851739070116586.103133200784621",
+      "version": "1.0.1",
+      "identifier": "e71010d4058ad4092ece4ca31a6ba21d7b7b1f6b",
+      "dotted_decimal_identifier": "65038384082815700.2584738374294123.178247509417835",
       "source": ".",
       "cache_key": null,
       "scm_info": {
         "scm": "git",
-        "remote": "git@github.com:lightspeedretail/chef-samson.git",
-        "revision": "aa350b2a99037f830270d8a52cd8e77ffdd9aa7f",
+        "remote": null,
+        "revision": "14b56f0a32e74e544776d561c93899b420f3536e",
         "working_tree_clean": false,
         "published": true,
         "synchronized_remote_branches": [
-          "origin/v1.0.0-bla-new-samson"
+          "origin/HEAD -> origin/master",
+          "origin/master"
         ]
       },
       "source_options": {
@@ -206,6 +207,24 @@
       ]
     ],
     "dependencies": {
+      "samson (1.0.1)": [
+        [
+          "common_deploy",
+          "~> 0.2.0"
+        ],
+        [
+          "nvm",
+          "~> 0.1.7"
+        ],
+        [
+          "ruby_rbenv",
+          "~> 1.1.0"
+        ],
+        [
+          "ruby_build",
+          "~> 1.1.0"
+        ]
+      ],
       "common_deploy (0.2.0)": [
         [
           "common_attrs",
@@ -274,24 +293,6 @@
       ],
       "windows (4.1.4)": [
 
-      ],
-      "samson (1.0.0)": [
-        [
-          "common_deploy",
-          "~> 0.2.0"
-        ],
-        [
-          "nvm",
-          "~> 0.1.7"
-        ],
-        [
-          "ruby_rbenv",
-          "~> 1.1.0"
-        ],
-        [
-          "ruby_build",
-          "~> 1.1.0"
-        ]
       ]
     }
   }

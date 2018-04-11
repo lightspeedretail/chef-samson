@@ -1,6 +1,10 @@
 samson
 ======
 
+v1.0.1
+------
+* PLUGINS should be a Comma Separated Value now
+
 v1.0.0
 ------
 * Default to ruby 2.5.0 and samson v2207
