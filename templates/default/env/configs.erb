@@ -5,7 +5,7 @@ EXPORT_JOB_DOWNLOADED_AGE=<%= @export_job_downloaded_age || 12 %>
 EXPORT_JOB_MAX_AGE=<%= @export_job_max_age  || 1 %>
 FLOWDOCK_API_TOKEN=<%= @flowdock_api_token %>
 FORCE_SSL=<%= @force_ssl ? 1 : 0 %>
-PLUGINS="<%= @plugins.join(' ') %>"
+PLUGINS="<%= @plugins.join(',') %>"
 PROJECT_CREATED_NOTIFY_ADDRESS=<%= @project_created_notify_address %>
 PROJECT_DELETED_NOTIFY_ADDRESS=<%= @project_deleted_notify_address %>
 SECRET_SIDECAR_IMAGE=<%= @secret_sidecar_image %>
