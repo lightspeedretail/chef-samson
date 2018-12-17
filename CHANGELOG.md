@@ -1,6 +1,10 @@
 samson
 ======
 
+v1.0.2
+------
+* Run bundle w/o local to get fresh from remote
+
 v1.0.1
 ------
 * PLUGINS should be a Comma Separated Value now
