@@ -39,7 +39,6 @@ common_deploy_revision node['samson']['root_dir'] do
     rbenv_script 'bundle install' do
       code %w(
         bundle
-        --local
         --without
       ).concat(disabled_gem_groups).join(' ')
       cwd release_path
