@@ -4,7 +4,7 @@ maintainer_email 'pg.omni.devops@lightspeedhq.com'
 license          'Apache 2.0'
 description      'Installs/Configures samson'
 long_description 'Installs/Configures samson'
-version          '1.0.1'
+version          '1.0.2'
 chef_version     '~> 12.7.2'
 
 source_url       'https://github.com/lightspeedretail/chef-samson'
