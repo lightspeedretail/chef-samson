@@ -14,7 +14,7 @@ default['samson']['root_dir'] = File.join(node['samson']['home_dir'], 'samson')
 default['samson']['service']['name'] = 'service[samson]'
 
 # Version of ruby managed by rbenv.
-default['samson']['ruby']['version'] = '2.5.0'
+default['samson']['ruby']['version'] = '2.6.3'
 
 # Version of node managed by nvm.
 default['samson']['node']['version'] = '6.1.0'
