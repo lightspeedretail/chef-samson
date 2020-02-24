@@ -1,6 +1,6 @@
 default['common_deploy']['samson']['revision'].tap do |config|
   config['scm']['repository'] = 'https://github.com/zendesk/samson.git'
-  config['scm']['revision'] = 'v2207'
+  config['scm']['revision'] = 'v3109'
 
   config['build']['support_force'] = false
   config['build']['support_migrate'] = false

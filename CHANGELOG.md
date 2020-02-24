@@ -1,6 +1,11 @@
 samson
 ======
 
+v1.1.0
+------
+* Bump Samson to v3109
+* Bump Ruby to 2.6.3
+
 v1.0.2
 ------
 * Run bundle w/o local to get fresh from remote
